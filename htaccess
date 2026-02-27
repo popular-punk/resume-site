@@ -1,0 +1,8 @@
+RewriteEngine On
+
+RewriteCond %{HTTP_HOST} ^dylanfranklin\.com$ [OR]
+RewriteCond %{HTTP_HOST} ^www\.dylanfranklin\.com$
+RewriteRule ^(.*)$ https://clambakesbyjim.com/dylanfranklin/$1 [R=301,L]
+
+RewriteCond %{HTTPS} off
+RewriteRule ^(.*)$ https://%{HTTP_HOST}/$1 [L,R=301]
